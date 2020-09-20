@@ -46,5 +46,5 @@ if __name__ == '__main__':
         content = f.read()
         model = json.loads(content)
 
-    for i in range(10):
+    for i in range(args.num_of_strings):
         print(generate_sentence(model))
