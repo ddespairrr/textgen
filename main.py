@@ -45,6 +45,6 @@ if __name__ == '__main__':
     with open(args.path, "r", encoding="utf-8") as f:
         content = f.read()
         model = json.loads(content)
-
-    for i in range(args.num_of_strings):
-        print(generate_sentence(model))
+    with open("output.txt", 'w', encoding='utf-8') as f:
+        for i in range(args.num_of_strings):
+            f.write((generate_sentence(model)) + '\n')
