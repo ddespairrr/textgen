@@ -6,11 +6,13 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 parser = argparse.ArgumentParser(description='Input path to a model')
 parser.add_argument("community_id", type=str)
 parser.add_argument("cnt", type=int)
+parser.add_argument("login", type=str)
+parser.add_argument("password", type=str)
 args = parser.parse_args()
 
 
 def main():
-    login, password = "", ""
+    login, password = args.login, args.password
     vk_session = vk_api.VkApi(login, password)
     try:
         vk_session.auth(token_only=True)
