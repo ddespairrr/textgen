@@ -51,7 +51,7 @@ def get_model():
             model[t0].append((t1, freq / un[t0]))
         else:
             model[t0] = [(t1, freq / un[t0])]
-    with open("model.json", "w") as f:
+    with open("model.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(model))
 
 
